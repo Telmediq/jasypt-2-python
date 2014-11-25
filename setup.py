@@ -9,6 +9,8 @@ setup(
     version=__version__,
     description='Jasypt decryption library in Python',
     author='Caleb Shortt',
+    author_email='caleb.shortt@telmediq.com',
+    url='https://github.com/TelmedIQ/jasypt-2-python',
     packages=find_packages(),
     keywords=[
         'jasypt',
