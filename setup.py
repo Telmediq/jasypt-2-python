@@ -2,9 +2,11 @@
 from setuptools import setup, find_packages
 
 
+__version__ = '1.0.0'
+
 setup(
-    name='',
-    version='1.0',
+    name='jasypt2python' + __version__,
+    version=__version__,
     description='Jasypt decryption library in Python',
     author='Caleb Shortt',
     packages=find_packages(),
@@ -14,6 +16,6 @@ setup(
         'decryption',
     ],
     install_requires=[
-        'pycrypto',
+        'pycrypto==2.6.1',
     ],
 )
