@@ -1,0 +1,18 @@
+
+
+# Packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info/
+*.egg
+.idea/
+
+# Compiled Files
+*.py[cod]
+
+
+
