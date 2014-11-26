@@ -16,6 +16,14 @@ Description
     fields) to access information from a database that has been encrypted using the JASYPT field-level method.
 
 
+Installation
+------------
+
+.. code-block:: shell
+
+    pip install Jasypt2Python
+
+
 Usage
 -----
 
