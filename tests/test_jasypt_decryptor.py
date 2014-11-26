@@ -2,7 +2,7 @@
 import unittest
 import base64
 
-from j2p.JASYPT import Decryptor
+from j2p.JASYPT import J2PEngine
 
 """
 
@@ -27,19 +27,19 @@ class DecryptorTester(unittest.TestCase):
             "test": "HTvSyhfJlQjRtKP2oufrITtQxClfBZHmf9igfHgg7VU=",
         }
 
-        self.decryptor = Decryptor(self.password)
+        self.j2p = J2PEngine(self.password)
 
     def test_basic_decryption(self):
 
         for plaintext, ciphertext in self.encryptions.items():
-            given_plaintext = self.decryptor.decrypt(ciphertext)
+            given_plaintext = self.j2p.decrypt(ciphertext)
             self.assertEqual(plaintext, given_plaintext)
 
     def test_wrong_long_ciphertext(self):
 
         try:
             wrong_ciphertext = base64.b64encode("this is a test 123")
-            given_plaintext = self.decryptor.decrypt(wrong_ciphertext)
+            given_plaintext = self.j2p.decrypt(wrong_ciphertext)
             given_plaintext = str(given_plaintext).decode('utf-8', 'ignore')
 
         except ValueError as e:
@@ -51,7 +51,7 @@ class DecryptorTester(unittest.TestCase):
 
         try:
             too_small_ciphertext = base64.b64encode("this is a test")
-            given_plaintext = self.decryptor.decrypt(too_small_ciphertext)
+            given_plaintext = self.j2p.decrypt(too_small_ciphertext)
 
         except IndexError as e:
             pass
