@@ -29,13 +29,13 @@ Usage
 
 .. code-block:: python
 
-    from j2p.JASYPT import Decryptor
+    from j2p.JASYPT import J2PEngine
 
 
     my_password = "password used for encryption"
     some_ciphertext = "..."
 
-    decryptor = Decryptor(my_password)
+    decryptor = J2PEngine(my_password)
     plaintext = decryptor.decrypt(some_ciphertext)
 
     print plaintext
